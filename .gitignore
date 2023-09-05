@@ -111,3 +111,5 @@ cython_debug/
 
 # Jupyter stuff 
 .ipynb_checkpoints
+#vs Code Workspaces
+*.code-workspace
