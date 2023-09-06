@@ -3,28 +3,26 @@ import socket
 import datetime
 
 machine = socket.gethostname()
-submissions_file: str = (
-    "D:\DATAexperiments\EDGAR\submissions.zip"
-    if machine.upper().startswith("LANDFALL")
-    else "C:\DATAexperiments\EDGAR\submissions.zip"
-)
+last_run: datetime = datetime.datetime.now() - datetime.timedelta(2)
+datapath: str =  "D:\\DATAexperiments\\EDGAR"    if machine.upper().startswith("LANDFALL")    else "C:\\DATAexperiments\\EDGAR"
 
-companyfacts_file: str = (
-    "D:\DATAexperiments\EDGAR\companyfacts.zip"
-    if machine.upper().startswith("LANDFALL")
-    else "C:\DATAexperiments\EDGAR\companyfacts.zip"
-)
+submissions_file: str = f"{datapath}\\submissions.zip"
+companyfacts_file: str = f"{datapath}\\companyfacts.zip"
 
 submissions = zipfile.PyZipFile(submissions_file)
 companyfacts = zipfile.PyZipFile(companyfacts_file)
+
 submissions_extracted = [
-    submissions.extract(a)
+    submissions.extract(a, datapath)
     for a in submissions.infolist()
-    if datetime.datetime(*a.date_time) > datetime.datetime(2023, 9, 2)
+    if datetime.datetime(*a.date_time) > last_run
 ]
 
+
+
 companyfacts_extracted = [
-    companyfacts.extract(a)
+    companyfacts.extract(a, datapath)
     for a in companyfacts.infolist()
-    if datetime.datetime(*a.date_time) > datetime.datetime(2023, 9, 2)
+    if datetime.datetime(*a.date_time) > last_run
 ]
+
