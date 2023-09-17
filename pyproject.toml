@@ -23,8 +23,8 @@ classifiers = [
 dependencies = ["fastapi"]
 
 [project.urls]
-Homepage = "https://api.portwallistechnologies.io/edgar_api"
-Documentation = "https://api.portwallistechnologies/edgar_api/docs"
+Homepage = "https://edgar_api.portwallistechnologies.io"
+Documentation = "https://edgar_api.portwallistechnologies.io/docs"
 Repository = "https://github.com/Port-Wallis-Technologies/EDGAR-API.git"
 Changelog = "https://github.com/Port-Wallis-Technologies/EDGAR-API/blob/master/CHANGELOG.md"
 
