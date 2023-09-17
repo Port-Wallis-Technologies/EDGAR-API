@@ -9,8 +9,8 @@ description = "API that mirrors a subset of the EDGAR API plus som,e additional 
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
-authors = { name = "Rob Wolfe - Port Wallis Technologies", email = "rwolfe@portwallistechnologies.com" }
-maintainers = { name = "Rob Wolfe - Port Wallis Technologies", email = "rwolfe@portwallistechnologies.com" }
+authors = [{ name = "Rob Wolfe - Port Wallis Technologies", email = "rwolfe@portwallistechnologies.com" }]
+maintainers = [{ name = "Rob Wolfe - Port Wallis Technologies", email = "rwolfe@portwallistechnologies.com" }]
 keywords = []
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -20,11 +20,10 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
 ]
-dependencies = ["fastapi"]
+dependencies = ["fastapi", "pydantic"]
 
 [project.urls]
 Homepage = "https://edgar_api.portwallistechnologies.io"
 Documentation = "https://edgar_api.portwallistechnologies.io/docs"
 Repository = "https://github.com/Port-Wallis-Technologies/EDGAR-API.git"
 Changelog = "https://github.com/Port-Wallis-Technologies/EDGAR-API/blob/master/CHANGELOG.md"
-
